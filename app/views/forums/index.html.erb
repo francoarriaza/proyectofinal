@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Post</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th>Created by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forums.each do |forum| %>
+      <tr>
+        <td><%= forum.name %></td>
+        <td><%= forum.description %></td>
+        <td><%= forum.try(:photo) %></td>
+        <td><%= forum.user.email %></td>
+        <td><%= link_to 'Show', forum %></td>
+        <% if user_signed_in? %> 
+        <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
+        <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New post', new_forum_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :forums
+  devise_for :users
   get 'home/home'
 
   root to: 'home#home'
