@@ -1,0 +1,2 @@
+module TrabajasHelper
+end

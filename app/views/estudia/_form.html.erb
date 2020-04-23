@@ -1,0 +1,57 @@
+<%= form_with(model: estudium, local: true) do |form| %>
+  <% if estudium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estudium.errors.count, "error") %> prohibited this estudium from being saved:</h2>
+
+      <ul>
+      <% estudium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categoria %>
+    <%= form.text_field :categoria %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ubicacion %>
+    <%= form.text_field :ubicacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sede %>
+    <%= form.text_field :sede %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carreras %>
+    <%= form.text_field :carreras %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modo %>
+    <%= form.text_field :modo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nivel %>
+    <%= form.text_field :nivel %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

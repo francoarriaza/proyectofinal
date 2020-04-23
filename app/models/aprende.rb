@@ -1,0 +1,2 @@
+class Aprende < ApplicationRecord
+end

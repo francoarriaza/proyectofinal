@@ -1,6 +1,7 @@
 class ForumsController < ApplicationController
-  before_action :set_forum, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  #before_action :set_forum, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_user!, only: [:new, :create, :edit, :destr
+  load_and_authorize_resource
 
   # GET /forums
   # GET /forums.json
@@ -11,6 +12,7 @@ class ForumsController < ApplicationController
   # GET /forums/1
   # GET /forums/1.json
   def show
+    @comments = @forum.comments
   end
 
   # GET /forums/new

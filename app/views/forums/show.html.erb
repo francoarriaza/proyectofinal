@@ -15,5 +15,37 @@
   <%= @forum.photo %>
 </p>
 
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="well well-sm">
+			<legend>Comentar:</legend>
+			<%= form_with(model: [@forum, Comment.new], local: true, html: { class: 'form-horizontal' }) do |f| %>
+				<div class="form-group">
+					<div class="col-md-12">
+						<%= f.text_area :content, placeholder: 'Escribe tu comentario aquí...', class: 'form-control' %>
+					</div>
+				</div>
+				<%= f.submit 'Comentar', class: 'btn btn-primary' %>
+			<% end %>
+			  
+		</div>
+	</div>
+	<div class="col-md-8">
+		<% counter = 0 %>
+		<% @comments.each do |comment| %>
+			#<%= counter += 1 %>
+			<div class="well well-sm">
+				<strong><%= comment.user.email %>:</strong>
+				<br>
+				<%= comment.content %>
+				<div class="text-right">
+					<%= link_to 'Eliminar', forum_comment_path(@forum,comment), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Comentario?' }, class: 'btn btn-xs btn-danger' %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>

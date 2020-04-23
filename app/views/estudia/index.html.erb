@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estudia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Categoria</th>
+      <th>Descripcion</th>
+      <th>Ubicacion</th>
+      <th>Sede</th>
+      <th>Carreras</th>
+      <th>Modo</th>
+      <th>Nivel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estudia.each do |estudium| %>
+      <tr>
+        <td><%= estudium.nombre %></td>
+        <td><%= estudium.categoria %></td>
+        <td><%= estudium.descripcion %></td>
+        <td><%= estudium.ubicacion %></td>
+        <td><%= estudium.sede %></td>
+        <td><%= estudium.carreras %></td>
+        <td><%= estudium.modo %></td>
+        <td><%= estudium.nivel %></td>
+        <td><%= link_to 'Show', estudium %></td>
+        <td><%= link_to 'Edit', edit_estudium_path(estudium) %></td>
+        <td><%= link_to 'Destroy', estudium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Nuevo Centro de Estudio', new_estudium_path %>
+

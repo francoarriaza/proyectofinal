@@ -1,0 +1,17 @@
+<%= form_with(model: programa, local: true) do |form| %>
+  <% if programa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(programa.errors.count, "error") %> prohibited this programa from being saved:</h2>
+
+      <ul>
+      <% programa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

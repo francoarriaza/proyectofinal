@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  categoria: MyString
+  descripcion: MyString
+  ubicacion: MyString
+  sede: MyString
+  carreras: MyString
+  modo: MyString
+  nivel: MyString
+
+two:
+  nombre: MyString
+  categoria: MyString
+  descripcion: MyString
+  ubicacion: MyString
+  sede: MyString
+  carreras: MyString
+  modo: MyString
+  nivel: MyString

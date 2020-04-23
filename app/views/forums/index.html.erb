@@ -19,7 +19,7 @@
         <td><%= forum.name %></td>
         <td><%= forum.description %></td>
         <td><%= forum.try(:photo) %></td>
-        <td><%= forum.user.email %></td>
+        <td><%= forum.user.try(:email) %></td>
         <td><%= link_to 'Show', forum %></td>
         <% if user_signed_in? %> 
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
@@ -32,4 +32,6 @@
 
 <br>
 
+<% if user_signed_in? %> 
 <%= link_to 'New post', new_forum_path %>
+<% end %>
